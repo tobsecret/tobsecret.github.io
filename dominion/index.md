@@ -4,7 +4,7 @@ title: Dominion Sets
 permalink: /dominion/
 ---
 
-Below I've listed some sets of cards for the board game Dominion my friends and I have played and enjoyed.
+Below I've listed some sets of cards for the board game Dominion my friends & I have played and enjoyed, and that we have surviving documentation for.
 
 # General notes
 
@@ -86,7 +86,10 @@ This set is the first time we played with the card <a href="/assets/dominion/adv
 </div>
 
 
-## Yet another set
+## Fierce Competition
+
+This set results in a lot of messing with your opponents and often boils down to building enough resilience into your deck. 
+
 <div class="kingdom-container">
   <section class="expansion-group adventures">
     <h3>Adventures</h3>
@@ -122,7 +125,9 @@ This set is the first time we played with the card <a href="/assets/dominion/adv
 
 
 
-## Even more sets
+## Fierce Competition V2
+
+Refined *Fierce Competition* by adding <a href="/assets/dominion/base_game/Moat.jpg" class="hover-preview"> Moat<img src="/assets/dominion/base_game/Moat.jpg" alt="Preview"> </a> as a defensive option and replacing some other underused cards.
 
 <div class="kingdom-container">
   <section class="expansion-group adventures">
@@ -158,7 +163,9 @@ This set is the first time we played with the card <a href="/assets/dominion/adv
   </section>
 </div>
 
-## still more sets
+## Tug of war
+This set features a classic use of my favorite card in the game <a href="/assets/dominion/intrigue/Swindler.jpg" class="hover-preview"> Swindler<img src="/assets/dominion/intrigue/Swindler.jpg" alt="Preview"> </a> to turn coppers into curses. 
+This set offers many different options in the mid and early game.
 
 <div class="kingdom-container">
   <section class="expansion-group adventures">
@@ -169,6 +176,10 @@ This set is the first time we played with the card <a href="/assets/dominion/adv
       <img src="/assets/dominion/adventures/Giant.jpg" alt="Giant" class="dominion-card">
       <img src="/assets/dominion/adventures/Page.jpg" alt="Page" class="dominion-card">
       <img src="/assets/dominion/adventures/Wine_Merchant.jpg" alt="Wine Merchant" class="dominion-card">
+      <img src="/assets/dominion/adventures/Treasure_Hunter.jpg" alt="Treasure Hunter" class="dominion-card">
+      <img src="/assets/dominion/adventures/Warrior.jpg" alt="Warrior" class="dominion-card">
+      <img src="/assets/dominion/adventures/Hero.jpg" alt="Hero" class="dominion-card">
+      <img src="/assets/dominion/adventures/Champion.jpg" alt="Champion" class="dominion-card">      
       <img src="/assets/dominion/adventures/Borrow.jpg" alt="Borrow" class="events-dominion-card">
     </div>
   </section>
@@ -198,7 +209,9 @@ This set is the first time we played with the card <a href="/assets/dominion/adv
 
 
 
-## Yep still going
+## Tug of war alternative
+
+Simplified version that swapped out the <a href="/assets/dominion/adventures/Page.jpg" class="hover-preview"> Page<img src="/assets/dominion/adventures/Page.jpg" alt="Preview"> </a> and swapped in the <a href="/assets/dominion/intrigue/Pawn.jpg" class="hover-preview"> Pawn<img src="/assets/dominion/intrigue/Pawn.jpg" alt="Preview"> </a>.
 
 <div class="kingdom-container">
   <section class="expansion-group adventures">
@@ -223,8 +236,9 @@ This set is the first time we played with the card <a href="/assets/dominion/adv
     <h3>Intrigue</h3>
     <div class="card-row">
       <img src="/assets/dominion/intrigue/Baron.jpg" alt="Baron" class="dominion-card">
+      <img src="/assets/dominion/intrigue/Pawn.jpg" alt="Pawn" class="dominion-card">
       <img src="/assets/dominion/intrigue/Steward.jpg" alt="Steward" class="dominion-card">
-      <img src="/assets/dominion/intrigue/Swindler.jpg" alt="Swindler" class="dominion-card">
+      <img src="/assets/dominion/intrigue/Swindler.jpg" alt="Swindler" class="dominion-card">      
     </div>
   </section>
   <section class="expansion-group prosperity">

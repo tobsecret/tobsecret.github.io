@@ -1,0 +1,84 @@
+/* Expansion bg colors */
+.base-game  { background-color: #7ca5f0; }
+.intrigue   { background-color: #5c4ba1; } 
+.prosperity { background-color: #6ab04c; }
+.adventures { background-color: #d35400; }
+
+.kingdom-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+.expansion-group {
+  display: flex;
+  align-items: stretch; 
+  gap: 20px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Expansion section labels */
+.expansion-group h3 {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 10px 5px;
+  font-size: 1.2rem;
+  border-left: 2px solid rgba(255,255,255,0.3); /* Subtle divider */
+  color: white; 
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+/* Default for Mobile: 2 cards per row */
+.dominion-card {
+  width:calc(50% - (15px * 1 / 2));
+}
+
+/* Tablet: 3 cards per row */
+@media (min-width: 600px) {
+  .dominion-card {
+    width: calc(33.33% - (15px * 2 / 3));
+  }
+}
+
+/* Desktop: 5 cards per row */
+@media (min-width: 1000px) {
+  .dominion-card {
+    width: calc(20% - (15px * 4 / 5));
+  }
+}
+
+/* Events cards are in wide format 
+and take up 2 slots. It's not perfect but
+works well enough.
+*/
+/* Mobile */
+.events-dominion-card {
+  width:calc(2*50% - (15px * 1 / 2));
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+  .events-dominion-card {
+    width: calc(2*33.33% - (15px * 2 / 3));
+  }
+}
+
+/* Desktop */
+@media (min-width: 1000px) {
+  .events-dominion-card {
+    width: calc(2*20% - (15px * 4 / 5));
+  }
+}

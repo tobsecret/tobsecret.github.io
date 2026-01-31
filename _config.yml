@@ -1,3 +1,20 @@
-theme: jekyll-theme-merlot
 title: Tobsecret's homepage
 description: Programming Blog & Dominion sets
+plugins:
+  - jekyll-remote-theme
+remote_theme: daviddarnes/alembic@main
+
+# 9. Site navigation
+navigation_header:
+- title: Home
+  url: /
+- title: Blog
+  url: /blog/
+- title: CV
+  url: /cv/
+- title: Dominion
+  url: /dominion/
+
+social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
+  LinkedIn: https://www.linkedin.com/in/tschraink
+  GitHub: https://github.com/tobsecret

@@ -6,6 +6,11 @@ permalink: /dominion/
 
 Below I've listed some sets of cards for the board game Dominion my friends and I have played and enjoyed.
 
+# General notes
+
+A couple years ago our group started playing Dominion more often but it really got momentum when we got the Adventures expansion. I cannot recommend this expansion enough.
+You will find that we use the card <a href="/assets/dominion/adventures/Coin_of_the_Realm.jpg" class="hover-preview"> Coin of the Realm<img src="/assets/dominion/adventures/Coin_of_the_Realm.jpg" alt="Preview"> </a> as the only <span class="footnote-hover">action-positive<span class="tooltip-text">a card that provides more actions than it used to play, i.e. +2 or more</span> </span> card in a lot of our sets. We find that when a set has both action-positive and <span class="footnote-hover">draw-positive<span class="tooltip-text">a card that draws more cards than it required to play, i.e. +2 or more since each card you played required you to draw it first</span> </span> cards it polarizes towards buying those two kinds of cards. Even in absence of extra draw-positive cards, cards like <a href="/assets/dominion/base_game/Village.jpg" class="hover-preview"> Village<img src="/assets/dominion/base_game/Village.jpg" alt="Preview"> </a> end up becoming glue cards that most decks want. This leads to less interesting gameplay. Coin of the Realm weirdly does not fall into this pattern. You do not need to load your deck with it since you can use it on a turn where you need it for a big play. We find that it enables more big plays and diverse strategies without becoming a major focus of your deck.
+
 ## Trash to treasure
 This set revolves all around trashing cards. Trashing your opponents' cards, trashing your cards, getting cards from the trash. We loved the way the synergies played out and how Lurker makes the trash pile another shared resource.
 
@@ -39,7 +44,9 @@ This set revolves all around trashing cards. Trashing your opponents' cards, tra
   </section>
 </div>
 
-## Another set
+
+## Caw! (and I cannot stress this enough) CAW!
+This set is the first time we played with the card <a href="/assets/dominion/adventures/Magpie.jpg" class="hover-preview"> Magpie<img src="/assets/dominion/adventures/Magpie.jpg" alt="Preview"> </a> and we immediately loved it. This set has a surprising diversity of strategies that can win and as such each game has its own meta, so pay close attention to what cards your friends are buying.
 
 <div class="kingdom-container">
   <section class="expansion-group adventures">

@@ -1,0 +1,71 @@
+.hover-preview {
+  position: relative;
+  text-decoration: underline;
+  color: #5c4ba1;
+}
+
+.hover-preview img {
+  display: none;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  max-width: none;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  z-index: 10;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.hover-preview:hover img {
+  display: block;
+}
+
+/* Wrapper for the text */
+.footnote-hover {
+  position: relative;
+  border-bottom: 1px dotted #5c4ba1;
+  color: #5c4ba1;
+}
+
+/* The actual footnote popup */
+.footnote-hover .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: 220px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: normal;
+  position: absolute;
+  z-index: 1000;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  transition: opacity 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* The little arrow triangle at the bottom of the bubble */
+.footnote-hover .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.footnote-hover:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

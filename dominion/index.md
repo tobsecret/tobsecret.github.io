@@ -2,6 +2,7 @@
 layout: page
 title: Dominion Sets
 permalink: /dominion/
+feature_image: /assets/banner.webp
 ---
 
 Below I've listed some sets of cards for the board game Dominion my friends & I have played and enjoyed, and that we have surviving documentation for.

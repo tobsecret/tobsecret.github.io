@@ -69,3 +69,16 @@
   visibility: visible;
   opacity: 1;
 }
+
+// Modified from the template "alembic"
+.feature {
+  background-size: contain; /* The whole image will fit inside the box */
+  background-repeat: no-repeat;
+  background-color: $featureBackgroundColour; /* Fills gaps if image ratio differs */
+  .container {
+    @media (max-width: 768px) {
+    max-width: 90%; /* Give the content more room on small screens */
+    min-height: 25vh; /* Optionally reduce height so it's not too tall */
+    }
+  }
+}

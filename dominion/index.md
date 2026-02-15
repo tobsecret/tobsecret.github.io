@@ -10,18 +10,19 @@ Below I've listed some sets of cards for the board game Dominion my friends & I 
 # General notes
 
 A couple years ago our group started playing Dominion more often but it really got momentum when we got the Adventures expansion. I cannot recommend this expansion enough.
-You will find that we use the card <a href="/assets/dominion/adventures/Coin_of_the_Realm.jpg" class="hover-preview"> Coin of the Realm<img src="/assets/dominion/adventures/Coin_of_the_Realm.jpg" alt="Preview"> </a> as the only <span class="footnote-hover">action-positive<span class="tooltip-text">a card that provides more actions than it used to play, i.e. +2 or more</span> </span> card in a lot of our sets. We find that when a set has both action-positive and <span class="footnote-hover">draw-positive<span class="tooltip-text">a card that draws more cards than it required to play, i.e. +2 or more since each card you played required you to draw it first</span> </span> cards it polarizes towards buying those two kinds of cards. Even in absence of extra draw-positive cards, cards like <a href="/assets/dominion/base_game/Village.jpg" class="hover-preview"> Village<img src="/assets/dominion/base_game/Village.jpg" alt="Preview"> </a> end up becoming glue cards that most decks want. This leads to less interesting gameplay. Coin of the Realm weirdly does not fall into this pattern. You do not need to load your deck with it since you can use it on a turn where you need it for a big play. We find that it enables more big plays and diverse strategies without becoming a major focus of your deck.
+You will find that we use the card <a href="/assets/dominion/adventures/Coin_of_the_Realm.jpg" class="hover-preview"> Coin of the Realm<img src="/assets/dominion/adventures/Coin_of_the_Realm.jpg" alt="Preview"> </a> as the only <span class="footnote-hover">action-positive<span class="tooltip-text">a card that provides more actions than it used to play, i.e. +2 or more</span> </span> card in a lot of our sets. We find that when a set has both action-positive and <span class="footnote-hover">draw-positive<span class="tooltip-text">a card that draws more cards than it required to play, i.e. +2 or more since each card you played required you to draw it first</span> </span> cards it polarizes towards buying those two kinds of cards. Even in absence of extra draw-positive cards, cards like <a href="/assets/dominion/base/Village.jpg" class="hover-preview"> Village<img src="/assets/dominion/base/Village.jpg" alt="Preview"> </a> end up becoming glue cards that most decks want. This leads to less interesting gameplay. Coin of the Realm weirdly does not fall into this pattern. You do not need to load your deck with it since you can use it on a turn where you need it for a big play. We find that it enables more big plays and diverse strategies without becoming a major focus of your deck.
 
 ## Trash to treasure
-This set revolves all around trashing cards. Trashing your opponents' cards, trashing your cards, getting cards from the trash. We loved the way the synergies played out and how Lurker makes the trash pile another shared resource.
-
+This set revolves all around trashing cards. Trashing your opponents' cards, trashing your cards, getting cards from the trash. We loved the way the synergies played out and how Lurker makes the trash pile another shared resource. We have tried out <a href="/assets/dominion/intrigue/Masquerade.jpg" class="hover-preview"> Masquerade <img src="/assets/dominion/intrigue/Masquerade.jpg" alt="Preview"> </a> 
+and <a href="/assets/dominion/intrigue/Courtyard.jpg" class="hover-preview"> Courtyard <img src="/assets/dominion/intrigue/Courtyard.jpg" alt="Preview"> </a> but settled on using <a href="/assets/dominion/prosperity/Forge.jpg" class="hover-preview"> Forge <img src="/assets/dominion/prosperity/Forge.jpg" alt="Preview"> </a> instead.
+We also tried out <a href="/assets/dominion/adventures/Alms.jpg" class="hover-preview"> Alms <img src="/assets/dominion/adventures/Alms.jpg" alt="Preview"> </a> and <a href="/assets/dominion/adventures/Trade.jpg" class="hover-preview"> Trade <img src="/assets/dominion/adventures/Trade.jpg" alt="Preview"> </a> but found the former to be too strong and the latter too weak. We might try out <a href="/assets/dominion/adventures/Quest.jpg" class="hover-preview"> Quest<img src="/assets/dominion/adventures/Quest.jpg" alt="Preview"> </a> next as a way to combat curses.
 <div class="kingdom-container">
   <section class="expansion-group adventures">
     <h3>Adventures</h3>
     <div class="card-row">
       <img src="/assets/dominion/adventures/Amulet.jpg" alt="Amulet" class="dominion-card">
       <img src="/assets/dominion/adventures/Coin_of_the_Realm.jpg" alt="Coin of the Realm" class="dominion-card">
-      <img src="/assets/dominion/adventures/Dungeon.jpg" alt="Dungeon" class="dominion-card">
+      <img src="/assets/dominion/adventures/Dungeon.jpg" alt="Dungeon" class="dominion-card">     
     </div>
   </section>
 
@@ -40,6 +41,7 @@ This set revolves all around trashing cards. Trashing your opponents' cards, tra
     <h3>Prosperity</h3>
     <div class="card-row">
       <img src="/assets/dominion/prosperity/King&apos;s_Court.jpg" alt="King's Court" class="dominion-card">
+      <img src="/assets/dominion/prosperity/Forge.jpg" alt="Forge" class="dominion-card">
       <img src="/assets/dominion/prosperity/Peddler.jpg" alt="Peddler" class="dominion-card">
     </div>
   </section>
@@ -68,7 +70,7 @@ This set is the first time we played with the card <a href="/assets/dominion/adv
   <section class="expansion-group base-game">
     <h3>Dominion</h3>
     <div class="card-row">
-      <img src="/assets/dominion/base_game/Market.jpg" alt="Market" class="dominion-card">
+      <img src="/assets/dominion/base/Market.jpg" alt="Market" class="dominion-card">
     </div>
   </section>
   <section class="expansion-group intrigue">
@@ -102,9 +104,9 @@ This set results in a lot of messing with your opponents and often boils down to
   <section class="expansion-group base-game">
     <h3>Dominion</h3>
     <div class="card-row">
-      <img src="/assets/dominion/base_game/Gardens.jpg" alt="Gardens" class="dominion-card">
-      <img src="/assets/dominion/base_game/Workshop.jpg" alt="Workshop" class="dominion-card">
-      <img src="/assets/dominion/base_game/Village.jpg" alt="Village" class="dominion-card">
+      <img src="/assets/dominion/base/Gardens.jpg" alt="Gardens" class="dominion-card">
+      <img src="/assets/dominion/base/Workshop.jpg" alt="Workshop" class="dominion-card">
+      <img src="/assets/dominion/base/Village.jpg" alt="Village" class="dominion-card">
     </div>
   </section>
   <section class="expansion-group intrigue">
@@ -128,7 +130,7 @@ This set results in a lot of messing with your opponents and often boils down to
 
 ## Fierce Competition V2
 
-Refined *Fierce Competition* by adding <a href="/assets/dominion/base_game/Moat.jpg" class="hover-preview"> Moat<img src="/assets/dominion/base_game/Moat.jpg" alt="Preview"> </a> as a defensive option and replacing some other underused cards.
+Refined *Fierce Competition* by adding <a href="/assets/dominion/base/Moat.jpg" class="hover-preview"> Moat<img src="/assets/dominion/base/Moat.jpg" alt="Preview"> </a> as a defensive option and replacing some other underused cards.
 
 <div class="kingdom-container">
   <section class="expansion-group adventures">
@@ -141,11 +143,11 @@ Refined *Fierce Competition* by adding <a href="/assets/dominion/base_game/Moat.
   <section class="expansion-group base-game">
     <h3>Dominion</h3>
     <div class="card-row">
-      <img src="/assets/dominion/base_game/Moat.jpg" alt="Moat" class="dominion-card">
-      <img src="/assets/dominion/base_game/Workshop.jpg" alt="Workshop" class="dominion-card">
-      <img src="/assets/dominion/base_game/Village.jpg" alt="Village" class="dominion-card">
-      <img src="/assets/dominion/base_game/Bureaucrat.jpg" alt="Bureaucrat" class="dominion-card">
-      <img src="/assets/dominion/base_game/Throne_Room.jpg" alt="Throne Room" class="dominion-card">
+      <img src="/assets/dominion/base/Moat.jpg" alt="Moat" class="dominion-card">
+      <img src="/assets/dominion/base/Workshop.jpg" alt="Workshop" class="dominion-card">
+      <img src="/assets/dominion/base/Village.jpg" alt="Village" class="dominion-card">
+      <img src="/assets/dominion/base/Bureaucrat.jpg" alt="Bureaucrat" class="dominion-card">
+      <img src="/assets/dominion/base/Throne_Room.jpg" alt="Throne Room" class="dominion-card">
     </div>
   </section>
   <section class="expansion-group intrigue">
@@ -187,9 +189,9 @@ This set offers many different options in the mid and early game.
   <section class="expansion-group base-game">
     <h3>Dominion</h3>
     <div class="card-row">
-      <img src="/assets/dominion/base_game/Colony.jpg" alt="Colony" class="dominion-card">
-      <img src="/assets/dominion/base_game/Platinum.jpg" alt="Platinum" class="dominion-card">
-      <img src="/assets/dominion/base_game/Moneylender.jpg" alt="Moneylender" class="dominion-card">
+      <img src="/assets/dominion/base/Colony.jpg" alt="Colony" class="dominion-card">
+      <img src="/assets/dominion/base/Platinum.jpg" alt="Platinum" class="dominion-card">
+      <img src="/assets/dominion/base/Moneylender.jpg" alt="Moneylender" class="dominion-card">
     </div>
   </section>
   <section class="expansion-group intrigue">
@@ -228,9 +230,9 @@ Simplified version that swapped out the <a href="/assets/dominion/adventures/Pag
   <section class="expansion-group base-game">
     <h3>Dominion</h3>
     <div class="card-row">
-      <img src="/assets/dominion/base_game/Colony.jpg" alt="Colony" class="dominion-card">
-      <img src="/assets/dominion/base_game/Platinum.jpg" alt="Platinum" class="dominion-card">
-      <img src="/assets/dominion/base_game/Moneylender.jpg" alt="Moneylender" class="dominion-card">
+      <img src="/assets/dominion/base/Colony.jpg" alt="Colony" class="dominion-card">
+      <img src="/assets/dominion/base/Platinum.jpg" alt="Platinum" class="dominion-card">
+      <img src="/assets/dominion/base/Moneylender.jpg" alt="Moneylender" class="dominion-card">
     </div>
   </section>
   <section class="expansion-group intrigue">

@@ -2,6 +2,7 @@ title: Tobsecret's homepage
 description: Programming Blog & Dominion sets
 plugins:
   - jekyll-remote-theme
+  - jekyll-feed
 remote_theme: daviddarnes/alembic@main
 logo: "/assets/logos/logo.svg" # Site logo, also used in jekyll-seo-tag
 
@@ -9,6 +10,7 @@ collections:
   posts:
     feature_image: "/assets/banner.webp"
 
+timezone: America/New_York # Timezone for blog posts and alike
 
 # 8. Site favicons & manifest icons
 favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
@@ -31,7 +33,12 @@ navigation_header:
   url: /cv/
 - title: Dominion
   url: /dominion/
+- title: Search
+  url: /search/
+
+navigation_footer: true
 
 social_links: # Appears in sidebar. Set the urls then uncomment and comment out as desired
   LinkedIn: https://www.linkedin.com/in/tschraink
   GitHub: https://github.com/tobsecret
+  RSS: /feed.xml

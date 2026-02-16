@@ -1,0 +1,9 @@
+{% if site.navigation_footer %}
+<nav class="nav  nav--footer">
+  <ul class="list list--nav">
+{% include nav-social.html %}
+  </ul>
+</nav>
+{% else %}
+  {% include nav-default.html %}
+{% endif %}

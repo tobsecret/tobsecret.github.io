@@ -4,6 +4,10 @@ title: Home
 feature_image: /assets/banner.webp
 ---
 
+Welcome to my site!
+My name is Tobi and I enjoy thinking about software.
+Besides the software blog I also have a Dominion section where I catalogue sets of cards my friends and I have found to be fun.
+
 
 Latest blog posts:
 

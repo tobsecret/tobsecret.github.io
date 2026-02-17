@@ -320,16 +320,30 @@ I spent some time to model and render my banner image in Blender and wanted to a
 We can add this for all posts by adding the following to our `_config.yml`:
 ```yaml
 # 5. Collections
-collections:
-  posts:
-    feature_image: "/assets/banner.webp"
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post # Set the default layout for posts
+      feature_image: "/assets/banner.webp"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page # Set the default layout for pages
+      feature_image: "/assets/banner.webp"
 ```
-For the pages I added this manually at the top of each page, e.g. at the top of `index.md`:
+This won't update immediately in your browser so you'll have to interrupt your `bundle exec jekyll serve --watch` call with `CTRL+C` and then restart it. Refresh the page and you should see the banner at the top.
+
+You can still manually override it in any particular `page` or `post` by specifying a `feature_image` in the markdown:
 ```markdown
 ---
 layout: page
-title: Home
-feature_image: /assets/banner.webp
+title: Blog
+permalink: /blog/
+feature_image: /assets/some_other_banner.png
 ---
 ```
-

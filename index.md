@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Home
-feature_image: /assets/banner.webp
 ---
 
 Welcome to my site!

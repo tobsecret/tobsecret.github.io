@@ -48,7 +48,8 @@ timezone: America/New_York # Timezone for blog posts and alike
 # 5. Collections
 collections:
   posts:
-    feature_image: "/assets/banner.webp"
+    title: Posts # Needed for Siteleaf
+    output: true
 
 # 6. Jekyll collections settings
 defaults:
@@ -63,12 +64,15 @@ defaults:
       type: "posts"
     values:
       layout: post # Set the default layout for posts
+      feature_image: "/assets/banner.webp"
   -
     scope:
       path: ""
       type: "pages"
     values:
       layout: page # Set the default layout for pages
+      feature_image: "/assets/banner.webp"
+
 
 # 7. Site settings
 title: Tobsecret's homepage

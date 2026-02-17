@@ -267,11 +267,29 @@ styles: true
 ```
 
 Any additional SCSS can be imported below alembic, e.g. for my dominion section I wrote [`_dominion.scss`](/_sass/_dominion.scss) to standardize the formatting of the dominion cards and the containers for the expansions.
+### Adding an RSS feed
+RSS feeds can be used to automatically get updated when a new post is published via an RSS reader like [Feedly](https://feedly.com/). 
+In `Jekyll` we only have to add this little line to our `_config.yml`
+```yaml
+plugins:
+  ...
+  - jekyll-feed
+```
+Now our RSS feed is automatically generated and available at `<domain>/feed.xml` (i.e. `tobsecret.github.io/feed.xml`).
+
 
 ### Adding socials to the footer
 
 By default the template sets up the footer to contain the same navigation as the header, or optionally a clickable link with some text. The template also features a way to include social links and having them displayed in an aside.
 For my blog I wanted these socials to instead show in the footer.
+
+First let's set up our socials in `_config.yml` as defined by the template:
+```yml
+social_links:
+  LinkedIn: https://www.linkedin.com/in/tschraink
+  GitHub: https://github.com/tobsecret
+  RSS: /feed.xml
+```
 
 All we need to do is to create `_includes/nav-footer.html` with this content:
 {% raw %}

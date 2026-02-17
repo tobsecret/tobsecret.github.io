@@ -293,6 +293,9 @@ We also have to enable this footer in the `_config.yml` like so:
 ```yaml
 navigation_footer: true
 ```
+And we can now see the socials in our footer:
+![footer_with_socials.png](/assets/blog/2026-02-15/footer_with_socials.png)
+
 ### Adding a feature image
 
 I spent some time to model and render my banner image in Blender and wanted to add it to each post. My banner is `assets/banner.webp`. 

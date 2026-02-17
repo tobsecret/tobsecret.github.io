@@ -4,12 +4,25 @@ title: "How to set up this blog with Jekyll and GitHub pages"
 date: 2026-02-15 12:00:00 +0000
 ---
 
+## Outline 
+* Installation and setup
+* Quick setup
+* Minimal viable website
+  * Starting jekyll server
+  * Adding first content
+* Updating preferences
+  * Updating (S)CSS
+  * Adding socials to the footer
+  * Adding a feature image
+
 On [GitHub Pages](https://docs.github.com/en/pages) you can host websites like this one for free. There are tons of tutorials out there, here I'm just sharing how I set up this very blog you're reading.
 
 
 By default GitHub Pages uses Jekyll for building your website but they will [also accept](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#static-site-generators) already built static files or your own workflow for building your website.
 
-## Installation and Setup
+In this post I am using `Jekyll` and the template [`alembic`](https://github.com/daviddarnes/alembic). I will show how and what I modified to make my site.
+
+## Installation and setup
 
 We will be using `Jekyll` and `bundler` so we can locally preview the website while working on it.
 
@@ -41,7 +54,7 @@ gem "github-pages", group: :jekyll_plugins
 gem "jekyll-remote-theme"
 ```
 We are using the `github-pages` plugin so we can test locally.
-The `jekyll-remote-theme` plugin lets us use themes other than those [preconfigured](https://github.com/pages-themes) for GitHub Pages. We will show in the next titled section how to use a `remote theme`.
+The `jekyll-remote-theme` plugin lets us use themes other than those [preconfigured](https://github.com/pages-themes) for GitHub Pages. We will show in the  section [adding first content](#adding-first-content) how to use a `remote theme`.
 
 Next we'll add jekyll to the `Gemfile` like so:
 ```bash
@@ -53,6 +66,10 @@ Now we install all the dependencies
 ```bash
 bundle install
 ```
+
+## Quick Setup
+
+The remainder of this post is about setting up elements piece by piece, explaining what they do and how to modify them. If you want to just get started right now and change things later, you can download the [GitHub Pages with remote theme kit](https://github.com/daviddarnes/alembic-kit/archive/remote-theme.zip) linked to on the theme's [GitHub](https://github.com/daviddarnes/alembic). This kit uses reasonable defaults and enables most features from the get-go. You can still always come back to my post and read about how to further modify the theme for your needs.
 
 ## Minimal viable website
 
@@ -181,7 +198,8 @@ layout: post
 title: "Writing helps me think"
 date: 2026-02-15 12:00:00 +0000
 ---
-When I write about the software I write, I find myself looking up a lot more questions than when I am just getting things done.
+When I write about the software I write, I find myself looking up 
+a lot more questions than when I am just getting things done.
 ```
 And now our blog page is updated:
 ![updated_blog_post_view](/assets/blog/2026-02-15/updated_blog_post_view.png)
@@ -208,3 +226,89 @@ excerpt: "Search for a page or post you're looking for"
 {% include site-search.html %}
 ```
 {% endraw %}
+
+### Updating preferences
+
+### Updating (S)CSS
+
+Usually to update files that the template has pre-defined, we have to provide an alternative copy of that file.
+
+To update the site's styling via SCSS everything goes through `assets/styles.scss` which looks like this in the template default:
+
+```css
+---
+title: false
+styles: true
+---
+@import "alembic";
+```
+When Jekyll processes this Sass (.scss), `@import "alembic"` generates all of the style elements included with the template. This means if we want to change any of those, we have to import or explicitly call them before `alembic` is imported.
+
+
+Let's change the colors via a file `_sass/modified_colors.scss`. Putting it in the `_sass` folder means Jekyll will find it when we try to import it.
+
+`_sass/modified_colors.scss`.
+```css
+$linkColour: #61AFFF; // Modulex Medium Blue
+$hoverColour: #0055BF; // Blue 
+$accentColour: #61AFFF; // Modulex Medium Blue
+```
+
+We also have to modify `assets/styles.scss` to import the colors before `alembic` gets imported:
+
+`assets/styles.scss`
+```css
+---
+title: false
+styles: true
+---
+@import "modified_colors";
+@import "alembic";
+```
+
+Any additional SCSS can be imported below alembic, e.g. for my dominion section I wrote [`_dominion.scss`](/_sass/_dominion.scss) to standardize the formatting of the dominion cards and the containers for the expansions.
+
+### Adding socials to the footer
+
+By default the template sets up the footer to contain the same navigation as the header, or optionally a clickable link with some text. The template also features a way to include social links and having them displayed in an aside.
+For my blog I wanted these socials to instead show in the footer.
+
+All we need to do is to create `_includes/nav-footer.html` with this content:
+{% raw %}
+```html
+{% if site.navigation_footer %}
+<nav class="nav  nav--footer">
+  <ul class="list list--nav">
+{% include nav-social.html %}
+  </ul>
+</nav>
+{% else %}
+  {% include nav-default.html %}
+{% endif %}
+```
+{% endraw %}
+The template provides its own `_includes/nav-footer.html` which instead of just {% raw %} `{% include nav-social.html %}` {% endraw %} includes some logic for handling the text + external link the template would use.
+
+We also have to enable this footer in the `_config.yml` like so:
+```yaml
+navigation_footer: true
+```
+### Adding a feature image
+
+I spent some time to model and render my banner image in Blender and wanted to add it to each post. My banner is `assets/banner.webp`. 
+We can add this for all posts by adding the following to our `_config.yml`:
+```yaml
+# 5. Collections
+collections:
+  posts:
+    feature_image: "/assets/banner.webp"
+```
+For the pages I added this manually at the top of each page, e.g. at the top of `index.md`:
+```markdown
+---
+layout: page
+title: Home
+feature_image: /assets/banner.webp
+---
+```
+

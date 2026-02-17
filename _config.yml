@@ -99,8 +99,8 @@ navigation_header:
   url: /
 - title: Blog
   url: /blog/
-- title: CV
-  url: /cv/
+# - title: CV
+#   url: /cv/
 - title: Dominion
   url: /dominion/
 - title: Search

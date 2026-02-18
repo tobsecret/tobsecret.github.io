@@ -1,5 +1,7 @@
 import pandas as pd
 from argparse import ArgumentParser
+# Optionally we could get the data directly from the API but that requires a key:
+# https://wiki.dominionstrategy.com/index.php?title=Special:CargoExport&tables=Components&&fields=Name%2C+Expansion&where=Purpose+in+(+%27Kingdom+Pile%27%2C+%27Landscape%27+)&order+by=Name+ASC&limit=1000&format=json
 
 def html_to_csv(html_file, csv_file):
     tables = pd.read_html(html_file)

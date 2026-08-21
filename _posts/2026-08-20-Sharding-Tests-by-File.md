@@ -66,3 +66,27 @@ Without this optimization your test setup scales worse and worse through shardin
 
 We built [pytest-fsplit](https://github.com/BeakrHub/pytest-fsplit) for this purpose. It's built with `pytest-xdist`, `pytest-split` and `nbval` in mind. 
 You could of course also use an alternative like `rpytest` or `maelstrom` but for us this little pytest plugin was the right fix.
+
+### Installation
+
+```
+pip install pytest-fsplit
+```
+
+### Usage
+
+First record durations from a complete, unsharded run:
+
+```
+pytest --fsplit-store-durations
+```
+Which produces the aforementioned `.test_durations`.
+
+Then run each file shard separately similar to how you would with `pytest-split`:
+
+```
+pytest --fsplits 4 --fgroup 1
+pytest --fsplits 4 --fgroup 2
+pytest --fsplits 4 --fgroup 3
+pytest --fsplits 4 --fgroup 4
+```

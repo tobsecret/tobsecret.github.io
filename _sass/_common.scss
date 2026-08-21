@@ -16,7 +16,7 @@
   border-radius: 8px;
   z-index: 10;
   background: white;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hover-preview:hover img {
@@ -48,9 +48,9 @@
   bottom: 150%;
   left: 50%;
   transform: translateX(-50%);
-  
+
   transition: opacity 0.3s;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* The little arrow triangle at the bottom of the bubble */
@@ -72,13 +72,34 @@
 
 // Modified from the template "alembic"
 .feature {
-  background-size: contain; /* The whole image will fit inside the box */
+  background-size: contain;
+  /* The whole image will fit inside the box */
   background-repeat: no-repeat;
-  background-color: $featureBackgroundColour; /* Fills gaps if image ratio differs */
+  background-color: $featureBackgroundColour;
+
+  /* Fills gaps if image ratio differs */
   .container {
     @media (max-width: 768px) {
-    max-width: 90%; /* Give the content more room on small screens */
-    min-height: 25vh; /* Optionally reduce height so it's not too tall */
+      max-width: 90%;
+      /* Give the content more room on small screens */
+      min-height: 25vh;
+      /* Optionally reduce height so it's not too tall */
     }
   }
+}
+
+/* Inline code (`` words ``) */
+.typeset code:not(pre code) {
+  background-color: #e2e8f0;
+  color: #1e293b;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+}
+
+/* Code blocks (``` blocks ```) */
+.typeset pre,
+.typeset pre code {
+  background-color: #e2e8f0;
+  color: #1e293b;
+  border-radius: 6px;
 }

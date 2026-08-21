@@ -103,3 +103,9 @@
   color: #1e293b;
   border-radius: 6px;
 }
+
+/* Make captions slightly darker than Alembic's light grey (#a8adac) */
+.typeset .caption,
+figcaption {
+  color: #5c6360;
+}

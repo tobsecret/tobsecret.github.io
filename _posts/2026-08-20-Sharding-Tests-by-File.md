@@ -28,7 +28,8 @@ This fine-grained balancing of test shards by individual test durations can be n
 
 <iframe src="/assets/blog/2026-08-20/2026-08-20-beakr-file-test-duration-histogram.html" width="100%" height="600" style="border:none;"></iframe>
 
-Figure 1: Histogram of test durations. X-axis is logarithmic. Longest test file took 24.8s, shortest under a ms. Bimodal distribution with means at 10ms and 1s.
+*Figure 1: Histogram of test durations. X-axis is logarithmic. Longest test file took 24.8s, shortest under a ms. Bimodal distribution with means at 10ms and 1s.*
+{: .caption}
 
 Balancing by test shards allows us to use the `pytest_ignore_collect` hook to avoid collecting the entire test code base in each shard and instead only collect the assigned files.
 Here an abridged time line of the `pytest_collect` phases:

@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Per-file test duration histogram</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: light-dark(#ffffff, #101828);
+      --foreground: light-dark(#172033, #f2f4f7);
+      --muted-foreground: light-dark(#667085, #a4adbd);
+      --border: light-dark(#d0d5dd, #475467);
+      --popover: light-dark(#ffffff, #1d2939);
+      --popover-foreground: light-dark(#172033, #f2f4f7);
+      --viz-series-1: light-dark(#2563eb, #60a5fa);
+      --viz-series-2: light-dark(#dc2626, #fb7185);
+      --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    body {
+      box-sizing: border-box;
+      margin: 24px;
+      background: var(--background);
+      color: var(--foreground);
+    }
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+    #beakr-file-duration-histogram {
+      width: 100%;
+      color: var(--foreground);
+      font-family: var(--font-sans);
+    }
+    #beakr-file-duration-histogram .figure-title {
+      font-size: 18px;
+      font-weight: 650;
+      line-height: 1.3;
+      color: var(--foreground);
+    }
+    #beakr-file-duration-histogram .figure-subtitle {
+      margin-top: 4px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: var(--muted-foreground);
+    }
+    #beakr-file-duration-histogram .plot-wrap {
+      position: relative;
+      width: 100%;
+      margin-top: 12px;
+    }
+    #beakr-file-duration-histogram svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+    #beakr-file-duration-histogram rect[data-chart-frame] {
+      fill: none;
+      stroke: var(--border);
+      shape-rendering: crispEdges;
+    }
+    #beakr-file-duration-histogram .grid line {
+      stroke: var(--border);
+      stroke-opacity: 0.55;
+      shape-rendering: crispEdges;
+    }
+    #beakr-file-duration-histogram .grid path {
+      display: none;
+    }
+    #beakr-file-duration-histogram .axis path,
+    #beakr-file-duration-histogram .axis line {
+      stroke: var(--border);
+    }
+    #beakr-file-duration-histogram .axis text,
+    #beakr-file-duration-histogram text {
+      fill: var(--foreground);
+      font-size: 12px;
+    }
+    #beakr-file-duration-histogram text.axis-title {
+      font-weight: 600;
+    }
+    #beakr-file-duration-histogram .duration-bin {
+      fill: var(--viz-series-1);
+      opacity: 0.78;
+    }
+    #beakr-file-duration-histogram .duration-bin:hover {
+      opacity: 1;
+    }
+    #beakr-file-duration-histogram .median-line {
+      stroke: var(--viz-series-2);
+      stroke-width: 2;
+      stroke-dasharray: 6 5;
+      pointer-events: none;
+    }
+    #beakr-file-duration-histogram .median-label-bg {
+      fill: var(--background);
+      opacity: 0.92;
+    }
+    #beakr-file-duration-histogram .median-label {
+      fill: var(--viz-series-2);
+      font-weight: 650;
+    }
+    #beakr-file-duration-histogram .tooltip {
+      position: absolute;
+      z-index: 5;
+      max-width: min(320px, calc(100% - 16px));
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      background: var(--popover);
+      color: var(--popover-foreground);
+      font-size: 12px;
+      line-height: 1.4;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    #beakr-file-duration-histogram .tooltip strong,
+    #beakr-file-duration-histogram .tooltip span {
+      color: var(--popover-foreground);
+    }
+    #beakr-file-duration-histogram .tooltip strong {
+      display: block;
+      font-weight: 650;
+    }
+    #beakr-file-duration-histogram .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+<div id="beakr-file-duration-histogram">
+  <div class="figure-title">Distribution of per-file test durations</div>
+  <div class="figure-subtitle">1,207 timed files from .test_durations · 32 logarithmic duration bins · median 88.3 ms</div>
+  <div class="plot-wrap">
+    <svg role="img" aria-labelledby="beakr-duration-histogram-title beakr-duration-histogram-desc"></svg>
+    <div class="tooltip" role="tooltip" aria-hidden="true"></div>
+  </div>
+  <div class="sr-only" id="beakr-duration-histogram-title">Distribution of per-file test durations</div>
+  <div class="sr-only" id="beakr-duration-histogram-desc">A histogram of 1,207 files in 32 logarithmic test-duration bins. The median duration is 88.3 milliseconds per file.</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(function () {
+  const root = document.getElementById("beakr-file-duration-histogram");
+  const bins = [{"x0":0.000106,"x1":0.000155985,"count":1},{"x0":0.000155985,"x1":0.000229541,"count":1},{"x0":0.000229541,"x1":0.000337782,"count":0},{"x0":0.000337782,"x1":0.000497066,"count":2},{"x0":0.000497066,"x1":0.00073146,"count":7},{"x0":0.00073146,"x1":0.001076385,"count":2},{"x0":0.001076385,"x1":0.001583961,"count":9},{"x0":0.001583961,"x1":0.002330888,"count":18},{"x0":0.002330888,"x1":0.003430033,"count":39},{"x0":0.003430033,"x1":0.005047488,"count":61},{"x0":0.005047488,"x1":0.007427664,"count":96},{"x0":0.007427664,"x1":0.010930227,"count":104},{"x0":0.010930227,"x1":0.016084447,"count":87},{"x0":0.016084447,"x1":0.023669172,"count":65},{"x0":0.023669172,"x1":0.034830524,"count":59},{"x0":0.034830524,"x1":0.051255084,"count":23},{"x0":0.051255084,"x1":0.075424752,"count":24},{"x0":0.075424752,"x1":0.110991785,"count":12},{"x0":0.110991785,"x1":0.163330683,"count":44},{"x0":0.163330683,"x1":0.24035033,"count":26},{"x0":0.24035033,"x1":0.353689091,"count":62},{"x0":0.353689091,"x1":0.520473482,"count":50},{"x0":0.520473482,"x1":0.765906139,"count":58},{"x0":0.765906139,"x1":1.127074161,"count":53},{"x0":1.127074161,"x1":1.658553313,"count":69},{"x0":1.658553313,"x1":2.440654916,"count":61},{"x0":2.440654916,"x1":3.591561618,"count":60},{"x0":3.591561618,"x1":5.285185863,"count":51},{"x0":5.285185863,"x1":7.777449636,"count":32},{"x0":7.777449636,"x1":11.444956604,"count":22},{"x0":11.444956604,"x1":16.841900339,"count":7},{"x0":16.841900339,"x1":24.783808,"count":2}];
+  const totalFiles = 1207;
+  const medianSeconds = 0.088265;
+  const svg = d3.select(root.querySelector("svg"));
+  const tooltip = d3.select(root.querySelector(".tooltip"));
+  const wrap = root.querySelector(".plot-wrap");
+  const height = 500;
+
+  function formatDuration(value) {
+    if (value < 0.001) return d3.format(".2r")(value * 1000) + " ms";
+    if (value < 1) return d3.format(".3r")(value * 1000) + " ms";
+    return d3.format(".3r")(value) + " s";
+  }
+
+  function draw() {
+    const measuredWidth = Math.max(320, Math.floor(wrap.getBoundingClientRect().width));
+    const compact = measuredWidth < 500;
+    const margin = {
+      top: 22,
+      right: compact ? 16 : 28,
+      bottom: 64,
+      left: compact ? 58 : 70
+    };
+    const innerWidth = measuredWidth - margin.left - margin.right;
+    const innerHeight = height - margin.top - margin.bottom;
+    const x = d3.scaleLog()
+      .domain([bins[0].x0, bins[bins.length - 1].x1])
+      .range([0, innerWidth]);
+    const y = d3.scaleLinear()
+      .domain([0, d3.max(bins, function (d) { return d.count; })])
+      .nice()
+      .range([innerHeight, 0]);
+
+    svg.selectAll("*").remove();
+    svg.attr("viewBox", "0 0 " + measuredWidth + " " + height);
+
+    const plot = svg.append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    plot.append("rect")
+      .attr("data-chart-frame", "")
+      .attr("width", innerWidth)
+      .attr("height", innerHeight);
+
+    plot.append("g")
+      .attr("class", "grid")
+      .call(d3.axisLeft(y).ticks(5).tickSize(-innerWidth).tickFormat(""));
+
+    const xTickCandidates = compact
+      ? [0.0001, 0.01, 1, 10]
+      : [0.0001, 0.001, 0.01, 0.1, 1, 10];
+    const xTicks = xTickCandidates.filter(function (value) {
+      return value >= x.domain()[0] && value <= x.domain()[1];
+    });
+
+    plot.append("g")
+      .attr("class", "axis")
+      .attr("transform", "translate(0," + innerHeight + ")")
+      .call(
+        d3.axisBottom(x)
+          .tickValues(xTicks)
+          .tickFormat(formatDuration)
+      );
+
+    plot.append("g")
+      .attr("class", "axis")
+      .call(d3.axisLeft(y).ticks(5).tickFormat(d3.format("d")));
+
+    plot.append("text")
+      .attr("class", "axis-title")
+      .attr("data-axis", "x")
+      .attr("x", innerWidth / 2)
+      .attr("y", innerHeight + 50)
+      .attr("text-anchor", "middle")
+      .text("Aggregated duration per test file (logarithmic scale)");
+
+    plot.append("text")
+      .attr("class", "axis-title")
+      .attr("data-axis", "y")
+      .attr("transform", "rotate(-90)")
+      .attr("x", -innerHeight / 2)
+      .attr("y", -48)
+      .attr("text-anchor", "middle")
+      .text("Number of test files");
+
+    plot.selectAll("rect.duration-bin")
+      .data(bins)
+      .join("rect")
+      .attr("class", "duration-bin")
+      .attr("x", function (d) { return x(d.x0) + 1; })
+      .attr("y", function (d) { return y(d.count); })
+      .attr("width", function (d) { return Math.max(1, x(d.x1) - x(d.x0) - 2); })
+      .attr("height", function (d) { return innerHeight - y(d.count); })
+      .attr("tabindex", 0)
+      .attr("aria-label", function (d) {
+        return formatDuration(d.x0) + " to " + formatDuration(d.x1) + ": " + d.count + " files";
+      })
+      .on("pointerenter focus", function (event, d) {
+        const bounds = wrap.getBoundingClientRect();
+        const barX = margin.left + (x(d.x0) + x(d.x1)) / 2;
+        const barY = margin.top + y(d.count);
+        const percentage = d3.format(".1f")(100 * d.count / totalFiles);
+        tooltip
+          .attr("aria-hidden", "false")
+          .style("opacity", 1)
+          .html(
+            "<strong>" + formatDuration(d.x0) + "–" + formatDuration(d.x1) + "</strong>" +
+            "<span>" + d3.format(",")(d.count) + " files · " + percentage + "% of timed files</span>"
+          );
+        const tooltipNode = tooltip.node();
+        const tooltipWidth = tooltipNode.offsetWidth;
+        const tooltipHeight = tooltipNode.offsetHeight;
+        const left = Math.max(8, Math.min(bounds.width - tooltipWidth - 8, barX - tooltipWidth / 2));
+        const top = Math.max(8, barY - tooltipHeight - 8);
+        tooltip.style("left", left + "px").style("top", top + "px");
+      })
+      .on("pointerleave blur", function () {
+        tooltip.attr("aria-hidden", "true").style("opacity", 0);
+      });
+
+    const medianX = x(medianSeconds);
+    plot.append("line")
+      .attr("class", "median-line")
+      .attr("x1", medianX)
+      .attr("x2", medianX)
+      .attr("y1", 0)
+      .attr("y2", innerHeight);
+
+    const medianLabel = plot.append("g")
+      .attr("transform", "translate(" + (medianX + (medianX > innerWidth - 115 ? -6 : 6)) + ",12)");
+    const medianText = medianLabel.append("text")
+      .attr("class", "median-label")
+      .attr("text-anchor", medianX > innerWidth - 115 ? "end" : "start")
+      .text("Median " + formatDuration(medianSeconds));
+    const medianBounds = medianText.node().getBBox();
+    medianLabel.insert("rect", "text")
+      .attr("class", "median-label-bg")
+      .attr("x", medianBounds.x - 4)
+      .attr("y", medianBounds.y - 2)
+      .attr("width", medianBounds.width + 8)
+      .attr("height", medianBounds.height + 4);
+  }
+
+  draw();
+  new ResizeObserver(draw).observe(wrap);
+})();
+</script>
+</body>
+</html>
